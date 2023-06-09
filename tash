@@ -1,0 +1,79 @@
+[1mdiff --git a/FNBTellerETLConsole/App.config b/FNBTellerETLConsole/App.config[m
+[1mindex 25f7ef8..af4df1f 100644[m
+[1m--- a/FNBTellerETLConsole/App.config[m
+[1m+++ b/FNBTellerETLConsole/App.config[m
+[36m@@ -1,8 +1,8 @@[m
+ ﻿<?xml version="1.0" encoding="utf-8"?>[m
+ <configuration>[m
+   <appSettings>[m
+[31m-    <add key="Environment" value="DEV" />[m
+[31m-    <add key="Database.ConnStrFNBCustom" value="Data Source=PDARGSQLDEV01;Initial Catalog=FNBCustom;Integrated Security=SSPI;" />[m
+[32m+[m[32m    <add key="Environment" value="QA" />[m
+[32m+[m[32m    <add key="Database.ConnStrFNBCustom" value="Data Source=PDARGSQLQA1L;Initial Catalog=FNBCustom;Integrated Security=SSPI;" />[m
+     <add key="Email.SmtpAddress" value="smtpout.myfnb.us" />[m
+     <add key="Email.SendReportsFrom" value="tellerreporting@fnb-corp.com" />[m
+     <add key="Email.SendEmailAlert" value="false" />[m
+[1mdiff --git a/FNBTellerETLConsole/FNBTellerETLConsole.csproj b/FNBTellerETLConsole/FNBTellerETLConsole.csproj[m
+[1mindex 86945ef..ee993c1 100644[m
+[1m--- a/FNBTellerETLConsole/FNBTellerETLConsole.csproj[m
+[1m+++ b/FNBTellerETLConsole/FNBTellerETLConsole.csproj[m
+[36m@@ -26,7 +26,7 @@[m
+     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>[m
+     <WebPage>publish.htm</WebPage>[m
+     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>[m
+[31m-    <ApplicationRevision>41</ApplicationRevision>[m
+[32m+[m[32m    <ApplicationRevision>42</ApplicationRevision>[m
+     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>[m
+     <UseApplicationTrust>false</UseApplicationTrust>[m
+     <PublishWizardCompleted>true</PublishWizardCompleted>[m
+[36m@@ -107,42 +107,42 @@[m
+   <ItemGroup>[m
+     <PublishFile Include="FNBCoreETL.pdb">[m
+       <Visible>False</Visible>[m
+[32m+[m[32m      <PublishState>Include</PublishState>[m
+[32m+[m[32m      <IncludeHash>True</IncludeHash>[m
+       <Group>[m
+       </Group>[m
+       <TargetPath>[m
+       </TargetPath>[m
+[31m-      <PublishState>Include</PublishState>[m
+[31m-      <IncludeHash>True</IncludeHash>[m
+       <FileType>File</FileType>[m
+     </PublishFile>[m
+     <PublishFile Include="FNBTellerETL.pdb">[m
+       <Visible>False</Visible>[m
+[32m+[m[32m      <PublishState>Include</PublishState>[m
+[32m+[m[32m      <IncludeHash>True</IncludeHash>[m
+       <Group>[m
+       </Group>[m
+       <TargetPath>[m
+       </TargetPath>[m
+[31m-      <PublishState>Include</PublishState>[m
+[31m-      <IncludeHash>True</IncludeHash>[m
+       <FileType>File</FileType>[m
+     </PublishFile>[m
+     <PublishFile Include="FNBTellerETLADODB.pdb">[m
+       <Visible>False</Visible>[m
+[32m+[m[32m      <PublishState>Include</PublishState>[m
+[32m+[m[32m      <IncludeHash>True</IncludeHash>[m
+       <Group>[m
+       </Group>[m
+       <TargetPath>[m
+       </TargetPath>[m
+[31m-      <PublishState>Include</PublishState>[m
+[31m-      <IncludeHash>True</IncludeHash>[m
+       <FileType>File</FileType>[m
+     </PublishFile>[m
+     <PublishFile Include="FNBTellerETLConsole.pdb">[m
+       <Visible>False</Visible>[m
+[32m+[m[32m      <PublishState>Include</PublishState>[m
+[32m+[m[32m      <IncludeHash>True</IncludeHash>[m
+       <Group>[m
+       </Group>[m
+       <TargetPath>[m
+       </TargetPath>[m
+[31m-      <PublishState>Include</PublishState>[m
+[31m-      <IncludeHash>True</IncludeHash>[m
+       <FileType>File</FileType>[m
+     </PublishFile>[m
+   </ItemGroup>[m

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>FNBCustom</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9d3e56ca-fc6b-4c4d-95ec-9f6c490631e5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>FNBCustom</RootNamespace>
+    <AssemblyName>FNBCustom</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="CashAdvanceReport" />
+    <Folder Include="CashAdvanceReport\StoredProcedures" />
+    <Folder Include="Application" />
+    <Folder Include="Application\StoredProcedures" />
+    <Folder Include="Application\Tables" />
+    <Folder Include="LeasePaymentReport" />
+    <Folder Include="LeasePaymentReport\StoredProcedures" />
+    <Folder Include="LeasePaymentReport\CreateTable" />
+    <Folder Include="TellerVolumeReport" />
+    <Folder Include="TellerVolumeReport\Stored Procedures" />
+    <Folder Include="AmlAccountsUpdater" />
+    <Folder Include="AmlAccountsUpdater\StoredProcedures" />
+    <Folder Include="OfficialCheckReport" />
+    <Folder Include="OfficialCheckReport\StoredProcedures" />
+    <Folder Include="Utils" />
+    <Folder Include="Utils\StoredProc" />
+    <Folder Include="LrgDollarOverridesReport" />
+    <Folder Include="TransitDepositReport" />
+    <Folder Include="TransitDepositReport\StoredProcedures" />
+    <Folder Include="MonetaryInstrumentLogReport" />
+    <Folder Include="MonetaryInstrumentLogReport\Stored Procedures" />
+    <Folder Include="MIMonthlyMonitoringReport" />
+    <Folder Include="MIMonthlyMonitoringReport\Stored Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="CashAdvanceReport\StoredProcedures\CashAdvanceReportGetInfo.sql" />
+    <Build Include="etlSchema.sql" />
+    <Build Include="Application\Tables\ApplicationLog.sql" />
+    <Build Include="Application\StoredProcedures\ApplicationLogInsert.sql" />
+    <Build Include="Application\StoredProcedures\JobLogInsert.sql" />
+    <Build Include="Application\Tables\JobLog.sql" />
+    <Build Include="LeasePaymentReport\StoredProcedures\LeasePaymentReportGetEmployees.sql" />
+    <Build Include="LeasePaymentReport\StoredProcedures\LeasePaymentsReportCreateRecord.sql" />
+    <Build Include="LeasePaymentReport\CreateTable\CreateTableLeasePaymentLog.sql" />
+    <Build Include="TellerVolumeReport\Stored Procedures\TellerVolumeReport_DateRange.sql" />
+    <Build Include="LeasePaymentReport\StoredProcedures\LeasePaymentReportGetValidInfoAgainst_EJDATADETAIL.sql" />
+    <Build Include="AmlAccountsUpdater\StoredProcedures\SetAllAmlAccountsCtrFlag.sql" />
+    <Build Include="AmlAccountsUpdater\StoredProcedures\SetAmlAccountsCtrFlag.sql" />
+    <None Include="LeasePaymentReport\StoredProcedures\GetTranSumPrevious.sql" />
+    <None Include="LeasePaymentReport\StoredProcedures\GetTranSumCurrent.sql" />
+    <None Include="LeasePaymentReport\StoredProcedures\GetAllScessionTransactions.sql" />
+    <Build Include="OfficialCheckReport\StoredProcedures\GetOfficalCheckTrans.sql" />
+    <Build Include="Utils\StoredProc\getVirtualTicketConfig.sql" />
+    <Build Include="TransitDepositReport\StoredProcedures\GetCustomerAccountData.sql" />
+    <Build Include="TransitDepositReport\StoredProcedures\GetTellerTransactionData.sql" />
+    <Build Include="TransitDepositReport\Types.sql" />
+    <None Include="MonetaryInstrumentLogReport\Stored Procedures\GetMonetaryInstrumentLog.sql" />
+    <Build Include="MIMonthlyMonitoringReport\Stored Procedures\GetMIMonthlyMonitoring.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LeasePaymentReport\StoredProcedures\LeasePaymentReportGetCheckNumber.sql" />
+    <None Include="TellerVolumeReport\Stored Procedures\TellerVolumeReport_CurrentMonth.sql" />
+    <None Include="TellerVolumeReport\Stored Procedures\TellerVolumeReport_PreviousMonth.sql" />
+    <None Include="LrgDollarOverridesReport\GetLargeDollarOverrides.sql" />
+  </ItemGroup>
+</Project>
